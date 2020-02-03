@@ -9,8 +9,8 @@ import java.util.StringTokenizer;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-    	Scanner entrada = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		Scanner entrada = new Scanner(System.in);
 		System.out.println("Digite arquivo a verificar: ");
 		String nome = entrada.next();
 		entrada.close();
@@ -25,6 +25,9 @@ public class Main {
 			e.printStackTrace();
 		}
 		// declarando lista que recebera cada palavra
+		System.out.println("Deseja imprimir a lista em ordem crescente ou decrescente?");
+		String ordem = entrada.next().toLowerCase();
+		entrada.close();
 		LSEO<String> listaOrdenada = new LSEO<String>();
 		String linha;
 
@@ -33,9 +36,20 @@ public class Main {
 			StringTokenizer iteraArquivo = new StringTokenizer(linha);
 			while (iteraArquivo.hasMoreTokens()) {
 				String novoNo = new String(iteraArquivo.nextToken().toLowerCase());
-				// insere na lista simplesmente ordenada
-				listaOrdenada.inserirListaCrescente(novoNo);
+				listaOrdenada.inserir(novoNo, ordem);
+			}
 		}
-    }
-}
+
+		System.out.println("A quantidade de palavras na lista é: " + listaOrdenada.getQuantidade());
+		System.out.println("Maior palavra contida no texto: " + listaOrdenada.pegaMaiorPalavra());
+		System.out.println("Total de palavras distintas: " + listaOrdenada.totalPalavraDistintas());
+
+		System.out.println("Lista de Palavras:");
+		listaOrdenada.imprimeLista();
+
+
+
+
+
+	}
 }
