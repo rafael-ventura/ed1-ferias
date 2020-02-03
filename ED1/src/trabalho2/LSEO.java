@@ -1,4 +1,4 @@
-package trabalho1;
+package trabalho2;
 
 public class LSEO<T extends Comparable<T>> implements IListaOrdenada<T> {
     protected No head;
