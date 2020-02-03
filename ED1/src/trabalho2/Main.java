@@ -13,8 +13,7 @@ public class Main {
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Digite arquivo a verificar: ");
 		String nome = entrada.next();
-		entrada.close();
-		File arquivo = new File("C:\\Users\\raf4a\\eclipse-workspace\\ED1\\src\\trabalho2" + nome + ".txt");
+		File arquivo = new File("C:\\Users\\raf4a\\eclipse-workspace\\ED1\\src\\trabalho2\\textos\\" + nome + ".txt");
 
 		// fazendo um try para inserir o arquivo no bufferedReader e le-lo com maior facilidade
 		BufferedReader buffer = null;
@@ -39,17 +38,10 @@ public class Main {
 				listaOrdenada.inserir(novoNo, ordem);
 			}
 		}
-
-		System.out.println("A quantidade de palavras na lista é: " + listaOrdenada.getQuantidade());
 		System.out.println("Maior palavra contida no texto: " + listaOrdenada.pegaMaiorPalavra());
 		System.out.println("Total de palavras distintas: " + listaOrdenada.totalPalavraDistintas());
 
 		System.out.println("Lista de Palavras:");
-		listaOrdenada.imprimeLista();
-
-
-
-
-
+		listaOrdenada.imprimeDistintas();
 	}
 }

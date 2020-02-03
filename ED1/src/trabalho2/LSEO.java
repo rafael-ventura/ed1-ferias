@@ -1,5 +1,11 @@
 package trabalho2;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class LSEO<T extends Comparable<T>> implements IListaOrdenada<T> {
 	protected No head;
 	private int qtdItens;
@@ -274,9 +280,36 @@ public class LSEO<T extends Comparable<T>> implements IListaOrdenada<T> {
 
 
 	public int totalPalavraDistintas() {
-		return 0;
-	}
+		HashMap<T, Integer> hash = new HashMap<T, Integer>();
+		No atual;
 
+		for (atual = head; atual != null; atual = atual.prox) {
+			if (hash.containsKey(atual.item)) {
+				hash.put(atual.item, hash.get(atual.item) + 1);
+			}
+			else {
+				hash.put(atual.item, 1);
+			}
+		}
+		return hash.size();
+	}
+	public void imprimeDistintas() {
+		HashMap<T, Integer> hash = new HashMap<T, Integer>();
+		No atual;
+
+		for (atual = head; atual != null; atual = atual.prox) {
+			if (hash.containsKey(atual.item)) {
+				hash.put(atual.item, hash.get(atual.item) + 1);
+			}
+			else {
+				hash.put(atual.item, 1);
+			}
+		}
+		for (java.util.Map.Entry<T, Integer> entry : hash.entrySet()) {
+			System.out.println(entry.getKey() + " :repetiu " + entry.getValue() + " vez(es).");
+		}
+	}
+	
 	public void imprimeLista() {
 		No atual = head;
 		System.out.println("[");
