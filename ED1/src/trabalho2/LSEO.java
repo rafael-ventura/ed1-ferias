@@ -1,9 +1,6 @@
 package trabalho2;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
 
 
 public class LSEO<T extends Comparable<T>> implements IListaOrdenada<T> {
@@ -53,9 +50,9 @@ public class LSEO<T extends Comparable<T>> implements IListaOrdenada<T> {
 			return true;
 
 		}   else if("decrescente".equals(ordem.toLowerCase())) {
-			No lista = new No(head.item);
+			No lista = head;
 			if(qtdItens == 0){	    	  
-				lista.item = item;
+				lista = new No(item);
 				lista.prox = null;
 				head = lista;
 				qtdItens++;
