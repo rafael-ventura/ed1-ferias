@@ -22,7 +22,7 @@ It´s about Stack, doing infix to postfix Strings
 ```
 ## 4
 ```
-It´s about Binary Trees, not done yet
+It´s about Binary Trees, reading a .txt file and adding words to the BinaryTree but identifying the distincts words and count them.
 
 ```
 
